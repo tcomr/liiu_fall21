@@ -35,8 +35,8 @@ print("rabit = {}, Chicken = {}".format(rabit, chicken))
   #   
     
     
-    
-  
+import itertools
+print(list(itertools.permutations([1,2,3])))  
   
   
   
