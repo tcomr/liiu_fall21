@@ -38,3 +38,59 @@ linkedin >= 12 | facebook >= 12
 
 views > 11 & views <= 14
 
+
+# if, else , else if ===================================
+
+md <- "LinkedIn"
+num <- 14
+
+if (md == "LinkedIn") {
+  print("Showing LinkedIn information")
+}
+
+
+if (num > 11) {
+  print("You're popular!")
+} else {
+  print("Try to be more visible!")
+}
+
+
+if (md == "LinkedIn") {
+  print("Showing LinkedIn information")
+  
+} else if (md == "Facebook") {
+    print("Showing Facebook information")
+  
+} else {
+  print("Unknown medium")
+  
+}
+
+
+
+# control flow construct 
+li <- 4
+fb <- 19
+
+if (li >= 15 & fb >= 15) {
+  sms <- 2 * (li + fb)
+  
+} else if  (li < 10 & fb < 10) {
+  sms <- 0.5 * (li + fb)
+  
+} else {
+  sms <- li + fb
+}
+
+# Print sms to the console
+print(sms)
+
+
+
+
+
+
+
+
+
