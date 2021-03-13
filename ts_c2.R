@@ -66,7 +66,7 @@ autoplot(hsales)+
 
 autoplot(ustreas)
 autoplot(window(elec, start=1980))
-  # window creates a subset of data 
+  # window creates a subset of data window(dta, start, end)
 ?window
 
 
