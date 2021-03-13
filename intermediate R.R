@@ -315,6 +315,53 @@ print(count)
 
 length(chars)
 
+# ==============================function =================================================
+
+# ====== args(median): gives arguments of function 
+
+# function arguments by position or by name, can have default values 
+# required and optional arguments of a function 
+
+# base, ggvis,  list(), mean(), sample(), abs()
+
+args(median)
+median
+args(sample) # function (x, size, replace = FALSE, prob = NULL)
+
+
+n <- c(16, 9, 13, 5, 2, 17, 14)
+na <- c(16, 9, 13, 5, 2, 17, 14, NA)
+mean(na) # NA
+mean(na, na.rm = TRUE, trim = .2) # 11.4
+mean(n) # 10.857
+
+# install.packages("ggvis")
+library(ggvis)
+ggvis(mtcars, ~wt, ~hp) # scatter plot 
+
+?search() # list of attached packages 
+
+# require(), library(): load packages 
+
+l_res = library(data.table)
+l_res # Error 
+
+res = require(data.table)
+res # gives TRUE or FALSE
+
+
+
+# data.table
+
+
+
+
+
+
+
+
+
+
 
 
 
