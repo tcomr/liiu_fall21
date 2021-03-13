@@ -348,10 +348,117 @@ l_res # Error
 
 res = require(data.table)
 res # gives TRUE or FALSE
-
-
-
 # data.table
+
+# =============== function scoping=====================================================
+
+pow_two <- function(arg1){
+  return(arg1^2)
+}
+
+
+# Use the function
+pow_two(12)
+
+sum_abs <- function(n_1, n_2){
+  return(abs(n_1) + abs(n_2))
+}
+
+sum_abs(-4, -12)
+
+# Define function hello()
+no_arg <- function(){
+  print("Hi there!")
+  return(FALSE)
+}
+# Call the function ()
+no_arg()
+
+
+pow_two <- function(x, print_info = TRUE) {
+  y <- x ^ 2
+  if (print_info == TRUE){
+    print(paste(x, "to the power two equals", y))
+  }
+  return(y)
+}
+a = 12
+pow_two(a, FALSE)
+pow_two(a, TRUE)
+
+# R passes argument by value: a remains 12, only  pow-two 144
+
+# function with control flow 
+interpret <- function(num_views){
+  if (num_views > 15){
+    print("You're popular!")
+    return(num_views)
+    
+  } else {
+    print("Try to be more visible!")
+    return(0)
+  }
+}
+
+
+ln <- c(16, 99, 13, 5, 2, 17, 14)
+fb <- c(17, 7, 5, 16, 8, 13, 14)
+
+
+# Call the interpret function twice
+interpret(ln[1])
+interpret(fb[2])
+
+
+
+# The interpret() can be used inside interpret_all()
+
+
+# Define the interpret_all() function
+# views: vector with data to interpret
+# return_sum: return total number of views 
+
+interpret_all <- function(views, return_sum = TRUE) {
+  count <- 0
+  
+  for (v in views) {
+    count <- count + interpret(v)
+    
+  }
+  
+# If return_sum is TRUE, return count, else return NULL
+  if (return_sum) {
+    return(count)
+    
+  } else {
+    return(NULL)
+    
+  }
+}
+
+# Call the interpret_all() function on both linkedin and facebook
+interpret_all(ln)
+interpret_all(fb)
+
+# install.packages("qplot")
+# install.packages("ggplot2")
+
+# library(qplot)
+library(ggplot2)
+qplot(mtcars$wt, mtcars$hp) # 
+
+search()
+
+
+
+
+
+
+
+
+
+
+
 
 
 
