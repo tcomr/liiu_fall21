@@ -18,6 +18,7 @@ autoplot(melsyd[, "Economy.Class"])+
   xlab("Year")+
   ylab("Thousands")
   
+
 # Visual: Downward spike in late 1989 
 
 # autopilot is plotting function,
