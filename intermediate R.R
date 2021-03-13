@@ -259,14 +259,61 @@ for (li in linkedin) {
 }
 
 
+#================strsplit(x, split = ")==================================
+
+# Pre-defined variables
+rquote <- "r's internals are irrefutably intriguing"
+
+chars <- strsplit(rquote, split = "")[[1]] # charactre  
+
+chars_all <- strsplit(rquote, split = "") # list 
+chars_all
+chars
+
+chars == chars_all # all FALSE! Why? how? 
+mode(chars) # charactr 
+mode(chars_all) # list 
+length(chars_all) # 1
+length(chars) # 40 
+
+for (ch in chars_all){
+  print(ch)
+}  # gives a single line 
+
+for (chr in chars){
+  print(chr)
+} # gives several lines with single character 
 
 
+# counts the number of r's that come before the first u in rquote?
 
+counts = 0
+for (ch in chars){
+  if (ch == 'r'){
+    counts = counts + 1
+    print(counts)
+  }
+  if (ch == 'u'){
+    break 
+  }
+}
+print(counts)
 
+# ================number of letters before u===============
+count = 0
 
+for (ch in chars){
+  
+  if (ch != 'u'){
+    count = count + 1 
+    print(count)
+  }else{
+    break 
+  }
+}
+print(count)
 
-
-
+length(chars)
 
 
 
