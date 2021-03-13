@@ -449,6 +449,44 @@ qplot(mtcars$wt, mtcars$hp) #
 
 search()
 
+# =====================lapply()=================================================
+# class, nchar, 
+
+class("x") # character 
+mode("x") # character 
+lapply(fb, class) # class function applied on fb list 
+
+lapply(fb, nchar) # nested lists of number of chars in each element 
+lst = lapply(fb, nchar)
+
+unlist(lapply(fb, nchar)) # numbers 
+
+ul = unlist(lapply(fb, nchar))
+class(lst) # list 
+class(ul) # integer 
+
+pioneers <- c("GAUSS:1777", "BAYES:1702", "PASCAL:1623", "PEARSON:1857")
+split_math <- strsplit(pioneers, split = ":")
+# Convert to lowercase strings
+split_low <- lapply(split_math, tolower)
+split_math
+split_low
+tolower(split_math)
+str(split_low)
+
+# =======================sapply()===============================================
+# unique, identical 
+#sapply(cities, nchar, USE.NAMES = TRUE )
+
+identical(3, 3) # TRUE 
+# ==================vapply()====================================================
+vapply(cities, unique_letter, charactor(4))
+args(vapply) # explicitly specify output format 
+args(sapply) # try to simplify list of array 
+args(sapply) # output is list 
+
+
+
 
 
 
