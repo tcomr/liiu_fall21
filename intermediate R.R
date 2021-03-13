@@ -86,11 +86,73 @@ if (li >= 15 & fb >= 15) {
 # Print sms to the console
 print(sms)
 
+#======================while loop ====================================================
+
+sd <- 76
+
+# while loop
+while (sd > 40 ) {
+  print("Slow down!")
+  sd <- sd - 5
+}
+
+# Print sd variable
+sd # prints 36 fails condition and exits teh loop 
 
 
 
+# Initialize the speed variable
+sd <- 64
+
+# Extended  while loop
+while (sd > 20) {
+  print(paste("Your speed is",sd))
+  
+  if (sd > 40 ) {
+    print("Slow down!")
+    sd <- sd - 11 
+    
+  } else {
+    print("OK!")
+    sd <- sd - 6
+  }
+}
 
 
+# Initialize the speed variable
+speed <- 88
+
+while (speed > 30) {
+  print(paste("Your speed is", speed))
+  
+  # Break the while loop when speed exceeds 80
+  if (speed > 80 ) {
+    break # it breaks for speed is 88 > 80 
+  }
+  
+  if (speed > 48) {
+    print("Slow down big time!")
+    speed <- speed - 11
+  } else {
+    print("Slow down!")
+    speed <- speed - 6
+  }
+}
+
+# write a while loop so that it:
+# prints out the triple of i, so 3 * i, at each run.
+# is abandoned with a break if the triple of i is divisible by 8, but still prints out this triple before breaking.
 
 
+# Initialize i as 1 
+i <- 1
 
+# while loop
+while (i <= 10) {
+  print(3 * i)
+  if ( 3 * i %% 8 == 0 ) {
+    print(3 * i)
+    break
+  }
+  i <- i + 1
+}
