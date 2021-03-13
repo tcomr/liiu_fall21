@@ -86,6 +86,12 @@ if (li >= 15 & fb >= 15) {
 # Print sms to the console
 print(sms)
 
+# ==========================ifelse =====================================================
+for (i in ln) {
+  ifelse(i > 5, 'large', 'small')
+  print(i)
+}
+
 #======================while loop ====================================================
 
 sd <- 76
@@ -251,10 +257,6 @@ for (li in linkedin) {
   
   print(li)
 }
-
-
-
-
 
 
 
