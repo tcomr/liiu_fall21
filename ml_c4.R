@@ -49,6 +49,21 @@ str(groceries)
 typeof(groceries)
 # S3 and s4 
 
+# itemFrequency
+itemFrequency(groceries[, 1:15]) # gives support 
+# number of times iteam appears / toal transactions 
+
+# visualize
+itemFrequencyPlot(groceries, support = 0.1)
+
+itemFrequencyPlot(groceries, topN = 20)
+
+image(sample(groceries, 100))
+# we want vertical line with many dots
+# solid vertical lines meaning item appeared in 
+# many transactions; very popular item
+# frequently baught item: good money 
+# find high association between items
 
 
 
