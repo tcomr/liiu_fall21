@@ -96,6 +96,48 @@ groceryrules = apriori(groceries, parameter =
 summary(groceryrules)
 
 
+# lift: 
+# how much more likeyly item y is to be baught/purchased relative to its usual/typical
+# rate, given the info that item x is bought. 
+
+inspect(groceryrules[1:3]) # look at first three rules 
+
+# put all rules to the data frame 
+sum_gr = (summary(groceryrules))
+
+groceryrules_df = as(groceryrules, 'data.frame')
+
+# View(groceryrules_df)
+library(dplyr)
+df = groceryrules_df %>% 
+  filter(lift > 1) %>% 
+  arrange(-lift)
+
+# poeple who buy herbs are 3.4% more likely to buy vegs
+  # compared to the usual rate [or than a typical customer]
+
+  # the support is for the rule:
+      # 0.07% of the rule[NOT itemset] appears0.07% in the data set 
+      # this rule covers 0.07% of the transactions 
+# The rule is: when people buy herbs they also buy root vegetables 
+
+# The rule is correct 43% of the purchases involving herbs
+
+
+# gt support value of rule 1 
+
+
+d = data.frame(itemFrequency(groceries[,1:169]))
+d = d %>% tibble::rownames_to_column()
+  
+d %>% filter(rowname == 'root vegetables')
+# gives the support of 'root vegetables' 
+
+
+
+
+
+
 
 
 
