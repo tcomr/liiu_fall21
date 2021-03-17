@@ -113,7 +113,7 @@ df = groceryrules_df %>%
   filter(lift > 1) %>% 
   arrange(-lift)
 
-# poeple who buy herbs are 3.4% more likely to buy vegs
+# people who buy herbs are 3.4% more likely to buy vegs
   # compared to the usual rate [or than a typical customer]
 
   # the support is for the rule:
@@ -124,7 +124,7 @@ df = groceryrules_df %>%
 # The rule is correct 43% of the purchases involving herbs
 
 
-# gt support value of rule 1 
+# get support value of rule 1 
 
 
 d = data.frame(itemFrequency(groceries[,1:169]))
@@ -132,6 +132,10 @@ d = d %>% tibble::rownames_to_column()
   
 d %>% filter(rowname == 'root vegetables')
 # gives the support of 'root vegetables' 
+
+
+
+
 
 
 
