@@ -67,6 +67,39 @@ image(sample(groceries, 100))
 
 
 
+#=============priori: name of algorithm======================
+
+# 
+# provide two parameters: support and confidence 
+# confidene: out of time item x was bought, 
+# how many times x and y bought together. 
+# default support = 10, confidence = 80
+# chopping off the columns, from 169  to the threshold 
+# any itmes don't meet 10% will be dropped
+# if don't have 80% conf in a arule, it will not show up 
+
+# support: screen or drop item in each iteration
+# 1st iteration: 1 item
+# 2nd iteration: 2 item ..... 
+
+
+apriori(groceries)
+
+# twice a day  = 60 times a day
+60/9835 # = 0.006100661
+groceryrules = apriori(groceries, parameter = 
+                         list(sup = 0.0061, conf = .25, minlen = 2))
+
+
+# minlen: rules with at least involves two items in a rule 
+
+summary(groceryrules)
+
+
+
+
+
+
 
 
 
