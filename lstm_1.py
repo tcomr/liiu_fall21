@@ -51,3 +51,22 @@ X_train.shape
 # zero padding 
 # I like the movie : length of ; 4 wods
 # I like the movie. It is great : length of 7; 7 words 
+
+
+
+
+#%% 
+# Algorihm needs each review to be of the same length 
+    # reviews must be of equal/same lengths
+        # so, add zeros if less than
+
+from keras.preprocessing import sequence
+
+# Create new train/test set
+X_train_padded = sequence.pad_sequences(X_train, maxlen = 100)
+    # maxlen if <100 words, add zeros to it
+    # if 100> , truncate to the hundred 
+
+
+X_test_padded = sequence.pad_sequences(X_test, maxlen = 100)
+
