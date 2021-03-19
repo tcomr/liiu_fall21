@@ -100,3 +100,22 @@ model.add(Dense(units = 1, activation= 'sigmoid'))
 # layers done, check model summary 
 
 model.summary()
+
+
+
+
+#%% 
+# now all we need is fit the data 
+# what minimization technique, like rmse 
+model.compile(loss = 'binary_crossentropy', optimizer = 'rmsprop')
+    # optimizer sth like gradient descent 
+
+
+# now score the model
+score = model.fit(x = X_train_padded, y = y_train, 
+                  batch_size=128, epochs=4,
+                  validation_data=(X_test_padded, y_test))
+# Function on 1:45 
+
+# how many times = epochs [iteration]
+# batch_size  = 
