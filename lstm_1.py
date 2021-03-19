@@ -70,3 +70,33 @@ X_train_padded = sequence.pad_sequences(X_train, maxlen = 100)
 
 X_test_padded = sequence.pad_sequences(X_test, maxlen = 100)
 
+
+
+#%% 
+# Now, algorithm 
+    # we add layer aftr layer, with Sequential
+from keras.models import Sequential
+
+model = Sequential()
+
+from keras.layers import Embedding
+    # we have to tell num of words, output dim, 
+# now add the embedding layer
+
+model.add(Embedding(input_dim = 10000, output_dim = 128))
+# input_dim is uniq words == num_words 
+# output_dim = dimension of output vector
+# raw input to output vector: input 10K, output = 128
+# Convert 10K words to vector representation to 128 
+
+from keras.layers import LSTM
+model.add(LSTM(units = 128))
+
+
+# add dense layer
+from keras.layers import Dense 
+model.add(Dense(units = 1, activation= 'sigmoid'))
+
+# layers done, check model summary 
+
+model.summary()
