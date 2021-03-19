@@ -1,4 +1,5 @@
-
+# chapter 6:
+    # neural network in python github 
 
 
 from keras.datasets import imdb
@@ -29,3 +30,24 @@ id_to_word = {value:key for key, value in word_to_id.items()}
 
 
 print(' '.join(id_to_word[id] for id in X_train[11]))
+
+
+#%% 
+# Now, lets start building the model
+# input, wordimbedding, 
+# wordembedding: convert sparse matrix to clusters of words
+# onehot encoding 
+
+# now only use unique words
+# num_words gives unique words 
+training_set, testing_set = imdb.load_data(num_words = 10000)
+
+X_train, y_train = training_set
+X_test, y_test = testing_set
+
+# to check shape 
+X_train.shape
+
+# zero padding 
+# I like the movie : length of ; 4 wods
+# I like the movie. It is great : length of 7; 7 words 
