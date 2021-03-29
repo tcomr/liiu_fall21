@@ -16,3 +16,27 @@ plot(x, col = (3-y))
 dat = data.frame(x = x, y =as.factor(y))
 svmfit = svm(y~., data = dat, kernel = 'linear', cost = 10, scale = FALSE)
 plot(svmfit, dat)
+
+# index
+svmfit$index
+
+summary(svmfit)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
