@@ -22,7 +22,12 @@ svmfit$index
 
 summary(svmfit)
 
+# change cost 
+svmfit = svm(y~., data = dat, kernel = 'linear', cost = 0.1, scale = FALSE)
+plot(svmfit, dat)
 
+# index
+svmfit$index
 
 
 
