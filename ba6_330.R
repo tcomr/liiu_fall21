@@ -66,6 +66,8 @@ mtext(side = 2, 'repshare', outer = TRUE,line = -1.25 )
 
 # another example gasoline data to create an index 
 
-
+# HW on blackboard, 
+# project announced next week
+  # may be data and questions gives 
 
 
