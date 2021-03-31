@@ -54,11 +54,17 @@ slant$loadings
   # three different coeffs. 
 slant$directions
 
+#
+for (k in 1:3){
+  plot(slant$y, slant$fitted[,k], ylim = c(-0.05, .85), 
+       ylab = "", xlab = "", main = sprintf("PLS(%d)", k),
+       pch = 20, col = c(4,3,2)[congress109Ideology$party], bty = "n")
+}
 
+mtext(side = 1, 'repshare', outer = TRUE,line = -1.25 )
+mtext(side = 2, 'repshare', outer = TRUE,line = -1.25 )
 
-
-
-
+# another example gasoline data to create an index 
 
 
 
