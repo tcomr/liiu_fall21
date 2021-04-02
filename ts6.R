@@ -60,6 +60,12 @@ air = window(ausair, start = 1990)
 fc_h = holt(air, h = 5)
 
 autoplot(fc_h)
+# strong 
+# you have to plateau after some time, how we catch that?
+# it i snot here, 
+# can you catch the plaetau as well, in addition to trend and seasonality?
+# yes, damped = TRUE arguement 
+
 
 # convert data into time series, then apply holt 
 # noise level of data is very hard to catch, not only 
@@ -67,8 +73,22 @@ autoplot(fc_h)
 
 
 
+fc_hd = holt(air, damped = TRUE, phi = 0.9, h = 15)
+autoplot(fc_hd)
 
+# on project:
+  # add different layes together 
 
+autoplot(air) + 
+  autolayer(fc, series = "Simple Exponential Smoothing", PI = FALSE) + 
+  autolayer(fc_h, series = "Holt's Method", PI = FALSE) + 
+  autolayer(fc_hd, series = "Dampled holt's Method", PI = FALSE) + 
+  xlab("Year")
+
+# eventhoug, the visualization is appealing, use accuracy to choose best model 
+# look at forecasting accuraciy by dividing data into train/test
+
+# exponenential smooting don't catch trend, use holt's damped 
 
 
 
