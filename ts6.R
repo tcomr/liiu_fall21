@@ -23,14 +23,34 @@ autoplot(fc) +
 
 # The closer the forecasting horizon is, the better teh forecasting is 
 
+# use ses when:
+  # no clear trend and seasonality 
 
 summary(fc)
 
+fc$lower
+# lower range of prediction interval 
+# prediction interval also tells confidence interval 
+
+fc$upper
+# 
+
+# how to get the proint predictoin from ses model 
+fc$mean # easiest to get mean forecast 
+
+pred = predict(fc)
+# pred[, 'Forecast'] # error 
+
+mode(pred)
+typeof(pred)
+p_df = data.frame(pred)  
+str(p_df)
+p_df[, "Point.Forecast"] # gives point forecast /prediction value
 
 
-
-
-
+# =========================Holt's Linear Trend Method ============================
+# allows for the trends
+# extends exponential modal but adds trend to ti 
 
 
 
