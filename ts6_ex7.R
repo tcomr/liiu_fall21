@@ -49,33 +49,6 @@ sse = function(y, alpha, level_0){
 
 # future flash coding exercise on 7.8 
 
-aust = window(austourists, start = 2005)
-autoplot(aust)
-# if constant seasonality, use additive/multiplicative 
-  # if variation in sesonal patternn is constant, 
-      # additive/multiplicative 
-
-fit1 = hw(aust, seasonal = "additive")
-fit2 = hw(aust, seasonal = "multiplicative")
-
-autoplot(aust) + 
-  autolayer(fit1, series = "Additive", PI = FALSE) + 
-  autolayer(fit2, series = "Multiplicative", PI = FALSE) + 
-  xlab("Year")
-
-# Provide stockholders:
-    # give forecasts and upper/lower ranges 
-    # if it is too wide; this is best we got 
-
-mean(fit1$upper)
-mean(fit2$upper)
-
-# don't work with daily data:
-  # the more noise you have on data, the worse the forecast is 
-# if possible collapse at least weekly data (collapse to lower frequency)
-
-
-
 
 
 
