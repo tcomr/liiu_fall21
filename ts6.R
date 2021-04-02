@@ -55,7 +55,9 @@ p_df[, "Point.Forecast"] # gives point forecast /prediction value
 # Main chalange for project: 
   #  convert data to time series object 
 
+
 air = window(ausair, start = 1990)
+fc = ses(air, h = 5)
 
 fc_h = holt(air, h = 5)
 
@@ -88,7 +90,34 @@ autoplot(air) +
 # eventhoug, the visualization is appealing, use accuracy to choose best model 
 # look at forecasting accuraciy by dividing data into train/test
 
-# exponenential smooting don't catch trend, use holt's damped 
+# exponenential smooting don't catch trend, use holt's damped = TRUE
+
+
+
+aust = window(austourists, start = 2005)
+autoplot(aust)
+# if constant seasonality, use additive/multiplicative 
+# if variation in sesonal patternn is constant, 
+# additive/multiplicative 
+
+fit1 = hw(aust, seasonal = "additive")
+fit2 = hw(aust, seasonal = "multiplicative")
+
+autoplot(aust) + 
+  autolayer(fit1, series = "Additive", PI = FALSE) + 
+  autolayer(fit2, series = "Multiplicative", PI = FALSE) + 
+  xlab("Year")
+
+# Provide stockholders:
+# give forecasts and upper/lower ranges 
+# if it is too wide; this is best we got 
+
+mean(fit1$upper)
+mean(fit2$upper)
+
+# don't work with daily data:
+# the more noise you have on data, the worse the forecast is 
+# if possible collapse at least weekly data (collapse to lower frequency)
 
 
 
