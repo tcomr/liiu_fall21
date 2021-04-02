@@ -49,12 +49,21 @@ p_df[, "Point.Forecast"] # gives point forecast /prediction value
 
 
 # =========================Holt's Linear Trend Method ============================
-# allows for the trends
+# allows for the trends in exponential 
 # extends exponential modal but adds trend to ti 
 
+# Main chalange for project: 
+  #  convert data to time series object 
 
+air = window(ausair, start = 1990)
 
+fc_h = holt(air, h = 5)
 
+autoplot(fc_h)
+
+# convert data into time series, then apply holt 
+# noise level of data is very hard to catch, not only 
+# having a trend or no trend, however haing a trend is a factor 
 
 
 
