@@ -49,6 +49,13 @@ dataprep_out <- dataprep(
   time.optimize.ssr = 1985:1993,
   time.plot = 1985:2000
 )
+# foo name of data set
+# predictors: synthetic control is created in pre-treatment period
+# need to provide predicotor variables to create weights 
+# minimize the pred. variable 
+# Cherry picking special dates for some predictors 
+
+
 
 # 1 in subscript is texas,
 # m = {poverty, income ....}
