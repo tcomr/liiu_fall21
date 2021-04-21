@@ -1,3 +1,5 @@
+# April 20
+# Final project on this algorithm 
 
 # Synthetic control 
 rm(list = ls())
