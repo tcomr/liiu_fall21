@@ -11,7 +11,7 @@ Box.test(diff(goog200, type = 'L jung-Box'))
   #  44 min: 
   # random / white noise: each values are not correlated
 
-# p-value = 0.39, reject the hypothesis 
+# p-value = 0.39, cannot reject the hypothesis 
 
 # 
 ggAcf(goog200)
@@ -50,4 +50,23 @@ summary(ur.kpss(goog))
 
 summary(ur.kpss(diff(goog)))
   # p-value: 0.0324
+
+
+
+# how many differences need I take?
+
+ndiffs(goog)
+# gives 1: so only 1 difference is good to make data stationary 
+
+#=======================Next section ===========
+# =========arima ========== mooving average 
+
+autoplot(uschange[, "Consumption"]) +
+  xlab("Year") + ylab("Quarterly percentage change")
+
+fit = auto.arima(uschange[, "Consumption"], seasonal = FALSE)
+fit %>% 
+
+ggPacf(uschange[, "Consumption"])
+         
 
